@@ -3,13 +3,13 @@
 import time
 import pyautogui
 from pynput import mouse, keyboard
-import logging
+# import logging
 
 # Configuration
 IDLE_INTERVAL = 30  # Seconds between mouse movements
 MOVE_DISTANCE = 1  # Minimal movement distance
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(message)s")
+# logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(message)s")
 
 
 class IdlePreventer:
@@ -44,7 +44,7 @@ class IdlePreventer:
                 pyautogui.moveTo(x, y)
                 time.sleep(self.idle_interval)
         except KeyboardInterrupt:
-            logging.info("Exiting...")
+            print("Exiting...")
         finally:
             mouse_listener.stop()
             keyboard_listener.stop()
